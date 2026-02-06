@@ -1,3 +1,37 @@
 {
-  "common": {}
+  "common": {
+    "auth": {
+      "signIn": {
+        "title": "Welcome Back",
+        "description": "Sign in to continue to your account",
+        "providers": {
+          "google": "Sign in with Google"
+        }
+      },
+      "signUp": {
+        "title": "Join CineMatch",
+        "description": "Create an account to get started",
+        "providers": {
+          "google": "Sign up with Google"
+        }
+      },
+      "form": {
+        "email": "Email",
+        "password": "Password",
+        "confirmPassword": "Confirm password",
+        "or": "Or",
+        "actions": {
+          "forgotPassword": "Forgot password",
+          "signIn": "Sign in",
+          "signUp": "Sign up",
+          "toSignIn": "Already have an account? <a>Sign in</a>",
+          "toSignUp": "Don't have an account? <a>Sign up</a>"
+        }
+      },
+      "hero": {
+        "title": "Cinema, Matched to Your Taste",
+        "description": "Get AI picks, rate movies, and see how your taste aligns with friends"
+      }
+    }
+  }
 }

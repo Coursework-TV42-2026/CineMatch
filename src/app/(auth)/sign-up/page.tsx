@@ -2,6 +2,7 @@
 
 import { Eye } from 'lucide-react';
 import Link from 'next/link';
+import { useTranslations } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -11,6 +12,7 @@ import AuthCard from '../_components/AuthCard';
 import SocialButtons from '../_components/SocialButtons';
 
 export default function SignUpPage() {
+  const t = useTranslations('common.auth');
   const supabase = createClient();
 
   const loginWithGoogle = () => {
@@ -26,18 +28,18 @@ export default function SignUpPage() {
     <AuthCard>
       <div className="space-y-6">
         <div className="text-center">
-          <h2 className="text-foreground mb-2 text-2xl font-bold">Create Account</h2>
-          <p className="text-muted-foreground text-sm">Enter your details to sign up.</p>
+          <h2 className="text-foreground mb-2 text-2xl font-bold">{t('signUp.title')}</h2>
+          <p className="text-muted-foreground text-sm">{t('signUp.description')}</p>
         </div>
 
         <form className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="email">Email</Label>
+            <Label htmlFor="email">{t('form.email')}</Label>
             <Input id="email" type="email" placeholder="john.doe@example.com" className="w-full" />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="password">Password</Label>
+            <Label htmlFor="password">{t('form.password')}</Label>
             <div className="relative">
               <Input
                 id="password"
@@ -55,7 +57,7 @@ export default function SignUpPage() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="confirm-password">Confirm Password</Label>
+            <Label htmlFor="confirm-password">{t('form.confirmPassword')}</Label>
             <div className="relative">
               <Input
                 id="confirm-password"
@@ -73,24 +75,27 @@ export default function SignUpPage() {
           </div>
 
           <Button type="submit" className="w-full">
-            Sign Up
+            {t('form.actions.signUp')}
           </Button>
         </form>
 
         <div className="relative">
           <Separator />
           <span className="bg-card text-muted-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-xs">
-            OR
+            {t('form.or')}
           </span>
         </div>
 
-        <SocialButtons onGoogleClick={loginWithGoogle} />
+        <SocialButtons onGoogleClick={loginWithGoogle} provider="signUp" />
 
         <p className="text-muted-foreground text-center text-sm">
-          Already have an account?{' '}
-          <Link href="/sign-in" className="text-primary hover:underline">
-            Sign In
-          </Link>
+          {t.rich('form.actions.toSignIn', {
+            a: (signIn) => (
+              <Link href="/sign-in" className="text-primary hover:underline">
+                {signIn}
+              </Link>
+            ),
+          })}
         </p>
       </div>
     </AuthCard>
