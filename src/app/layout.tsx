@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Antipode',
+  title: 'CineMatch',
   description:
-    'Collaborate in real-time, discover hidden gems with AI insights, and preserve your journey with digital time capsules',
+    'Track what you watch, find your next favorite movie with AI, and share your passion for cinema with friends on CineMatch.',
 };
 
 export default async function RootLayout({

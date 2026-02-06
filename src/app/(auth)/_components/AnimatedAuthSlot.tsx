@@ -26,6 +26,7 @@ const AnimatedAuthSlot = ({ children, className, slotType }: TAnimatedSlotProps)
 
   return (
     <motion.div
+      initial={isMobile ? {} : { x: xPosition }}
       animate={isMobile ? {} : { x: xPosition }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
       className={className}
