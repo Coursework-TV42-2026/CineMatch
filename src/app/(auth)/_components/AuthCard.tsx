@@ -9,7 +9,7 @@ const AuthCard = ({ children, className }: TAuthCardProps) => {
   return (
     <div
       className={cn(
-        'bg-card dark:bg-card/90 w-full max-w-md rounded-2xl p-8 shadow-2xl dark:backdrop-blur-sm',
+        'w-full max-w-md rounded-2xl bg-card p-8 shadow-2xl dark:bg-card/90 dark:backdrop-blur-sm',
         className,
       )}
     >
