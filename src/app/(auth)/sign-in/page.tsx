@@ -12,22 +12,21 @@ export default function SignInPage() {
     <AuthCard>
       <div className="space-y-6">
         <div className="text-center">
-          <h2 className="text-foreground text-2xl font-bold">{t('signIn.title')}</h2>
-          <p className="text-muted-foreground mt-2 text-sm">{t('signIn.description')}</p>
+          <h2 className="text-2xl font-bold text-foreground">{t('signIn.title')}</h2>
+          <p className="mt-2 text-sm text-muted-foreground">{t('signIn.description')}</p>
         </div>
 
         <SignInForm />
 
-        <div className="relative">
-          <Separator />
-          <span className="bg-card text-muted-foreground absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-2 text-xs uppercase">
-            {t('form.or')}
-          </span>
+        <div className="flex items-center gap-2">
+          <Separator className="flex-1" />
+          <span className="text-xs text-muted-foreground uppercase">{t('form.or')}</span>
+          <Separator className="flex-1" />
         </div>
 
         <SocialButtons provider="signIn" />
 
-        <p className="text-muted-foreground text-center text-sm">
+        <p className="text-center text-sm text-muted-foreground">
           {t.rich('form.actions.toSignUp', {
             a: (signUp) => (
               <Link href="/sign-up" className="text-primary hover:underline">

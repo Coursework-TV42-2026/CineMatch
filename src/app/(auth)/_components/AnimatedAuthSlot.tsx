@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import { useMobile } from '@/lib/hooks/useMobile';
+import { cn } from '@/lib/cn';
 
 const SLOT_POSITIONS = {
   form: { signIn: '100%', signUp: '0%' },
@@ -18,7 +18,6 @@ type TAnimatedSlotProps = {
 };
 
 const AnimatedAuthSlot = ({ children, className, slotType }: TAnimatedSlotProps) => {
-  const isMobile = useMobile();
   const pathname = usePathname();
 
   const isSignIn = pathname === '/sign-in';
@@ -26,10 +25,10 @@ const AnimatedAuthSlot = ({ children, className, slotType }: TAnimatedSlotProps)
 
   return (
     <motion.div
-      initial={isMobile ? {} : { x: xPosition }}
-      animate={isMobile ? {} : { x: xPosition }}
+      initial={{ x: xPosition }}
+      animate={{ x: xPosition }}
       transition={{ duration: 0.5, ease: 'easeInOut' }}
-      className={className}
+      className={cn(className, 'max-lg:transform-none!')}
     >
       {children}
     </motion.div>
