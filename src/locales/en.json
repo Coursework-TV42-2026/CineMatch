@@ -32,6 +32,27 @@
         "title": "Cinema, Matched to Your Taste",
         "description": "Get AI picks, rate movies, and see how your taste aligns with friends"
       }
+    },
+
+    "errors": {
+      "auth": {
+        "email": {
+          "invalid": "Invalid email address",
+          "maxLength": "Email must be at most {length} characters long"
+        },
+        "password": {
+          "minLength": "Password must be at least {length} characters long",
+          "maxLength": "Password must be at most {length} characters long",
+          "lowercase": "Password must contain at least one lowercase letter",
+          "uppercase": "Password must contain at least one uppercase letter",
+          "number": "Password must contain at least one number",
+          "match": "Passwords do not match"
+        },
+        "types": {
+          "string": "Must be a string",
+          "number": "Must be a number"
+        }
+      }
     }
   }
 }
