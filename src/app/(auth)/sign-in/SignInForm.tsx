@@ -32,8 +32,7 @@ const SignInForm = () => {
   const [isEmailNotConfirmedError, setIsEmailNotConfirmedError] = useState(false);
 
   const handleResendLink = async () => {
-    const { error } = await supabase.auth.resend({
-      type: 'signup',
+    const { error } = await supabase.auth.signInWithOtp({
       email: getValues('email'),
       options: {
         emailRedirectTo: `${location.origin}/api/auth/callback`,
