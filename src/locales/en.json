@@ -25,8 +25,18 @@
           "signIn": "Sign in",
           "signUp": "Sign up",
           "toSignIn": "Already have an account? <a>Sign in</a>",
-          "toSignUp": "Don't have an account? <a>Sign up</a>"
+          "toSignUp": "Don't have an account? <a>Sign up</a>",
+          "emailNotConfirmed": {
+            "resend": "Email not verified. <resend>Resend link</resend>",
+            "sending": "Sending the verification link..."
+          }
         }
+      },
+      "checkEmail": {
+        "title": "Confirmation link sent",
+        "description": "We've sent you a confirmation link. Please check your email and click the link to verify your account.",
+        "back": "Back",
+        "goHome": "Go home"
       },
       "hero": {
         "title": "Cinema, Matched to Your Taste",

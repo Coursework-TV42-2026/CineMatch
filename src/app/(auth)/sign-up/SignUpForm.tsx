@@ -31,6 +31,9 @@ const SignUpForm = () => {
     const { data, error } = await supabase.auth.signUp({
       email: formData.email,
       password: formData.password,
+      options: {
+        emailRedirectTo: `${origin}/api/auth/callback`,
+      },
     });
 
     if (error) {
@@ -40,7 +43,10 @@ const SignUpForm = () => {
 
     // TODO: set user data to MobX store
     console.log('User signed up:', data);
-    router.push('/');
+    // router.push('/');
+
+    // Ask to confirm email
+    router.push('?checkEmail=true');
   };
 
   return (
