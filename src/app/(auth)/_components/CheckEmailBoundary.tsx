@@ -1,21 +1,43 @@
 'use client';
 
-import { useSearchParams } from 'next/navigation';
+import Link from 'next/link';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
+import { Button } from '@/components/ui/button';
 import AuthCard from './AuthCard';
-import CheckEmail from './CheckEmail';
 
 type TCheckEmailBoundaryProps = {
   children: React.ReactNode;
 };
 
 const CheckEmailBoundary = ({ children }: TCheckEmailBoundaryProps) => {
+  const t = useTranslations('common.auth.checkEmail');
+  const router = useRouter();
   const searchParams = useSearchParams();
   const showCheckEmail = searchParams.get('checkEmail') === 'true';
 
   if (showCheckEmail) {
     return (
       <AuthCard>
-        <CheckEmail />
+        <div className="space-y-6 text-center">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-bold text-foreground">{t('title')}</h2>
+            <p className="text-muted-foreground">{t('description')}</p>
+          </div>
+
+          <div className="flex gap-3">
+            <Button
+              onClick={() => router.push(window.location.pathname)} // Clear search params
+              variant="outline"
+              className="flex-1"
+            >
+              {t('back')}
+            </Button>
+            <Button asChild className="flex-1">
+              <Link href="/">{t('goHome')}</Link>
+            </Button>
+          </div>
+        </div>
       </AuthCard>
     );
   }

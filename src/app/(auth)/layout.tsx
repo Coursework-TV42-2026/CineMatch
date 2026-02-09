@@ -1,5 +1,6 @@
 import AnimatedAuthSlot from './_components/AnimatedAuthSlot';
 import AuthHero from './_components/AuthHero';
+import CheckEmailBoundary from './_components/CheckEmailBoundary';
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,7 +17,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
           slotType="form"
           className="relative z-10 flex w-full items-center justify-center p-12 max-lg:p-6 lg:w-1/2"
         >
-          {children}
+          <CheckEmailBoundary>{children}</CheckEmailBoundary>
         </AnimatedAuthSlot>
       </div>
     </div>
