@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import AppProviders from '@/components/providers/AppProviders';
+import GlobalErrorModal from '@/components/shared/GlobalErrorModal';
 import './globals.css';
 
 const inter = Inter({
@@ -22,7 +23,10 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          {children}
+          <GlobalErrorModal />
+        </AppProviders>
       </body>
     </html>
   );

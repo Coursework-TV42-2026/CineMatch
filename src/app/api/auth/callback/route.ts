@@ -12,7 +12,7 @@ export async function GET(request: Request) {
   }
 
   if (!code) {
-    return NextResponse.redirect(`${origin}/?error=true`);
+    return NextResponse.redirect(`${origin}/?error=generic`);
   }
 
   const supabase = await createClient();
@@ -20,7 +20,7 @@ export async function GET(request: Request) {
 
   if (error) {
     // Return the user to home page with error
-    return NextResponse.redirect(`${origin}/?error=true`);
+    return NextResponse.redirect(`${origin}/?error=generic`);
   }
 
   const forwardedHost = request.headers.get('x-forwarded-host'); // original origin before load balancer
