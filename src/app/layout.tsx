@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import AppProviders from '@/components/providers/AppProviders';
 import GlobalErrorModal from '@/components/shared/GlobalErrorModal';
+import AppProviders from '@/context/AppProviders';
 import './globals.css';
 
 const inter = Inter({
