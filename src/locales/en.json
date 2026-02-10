@@ -33,8 +33,14 @@
         }
       },
       "checkEmail": {
-        "title": "Confirmation link sent",
-        "description": "We've sent you a confirmation link. Please check your email and click the link to verify your account.",
+        "confirm": {
+          "title": "Confirmation link sent",
+          "description": "We've sent you a confirmation link. Please check your email and click the link to verify your account."
+        },
+        "magicLink": {
+          "title": "Sign-in link sent",
+          "description": "We've sent you a sign-in link. Please check your email and click the link to access your account."
+        },
         "back": "Back",
         "goHome": "Go home"
       },

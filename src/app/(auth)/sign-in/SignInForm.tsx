@@ -45,7 +45,7 @@ const SignInForm = () => {
       return;
     }
 
-    router.push('?checkEmail=true');
+    router.push('?checkEmail=confirm');
   };
 
   const onSubmit = async (formData: TSignInSchema) => {

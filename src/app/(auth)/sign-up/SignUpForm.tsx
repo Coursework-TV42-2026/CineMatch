@@ -46,7 +46,7 @@ const SignUpForm = () => {
     // router.push('/');
 
     // Ask to confirm email
-    router.push('?checkEmail=true');
+    router.push('?checkEmail=confirm');
   };
 
   return (

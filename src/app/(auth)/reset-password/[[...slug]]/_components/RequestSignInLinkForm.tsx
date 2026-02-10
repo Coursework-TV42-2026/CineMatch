@@ -46,7 +46,7 @@ const RequestSignInLinkForm = () => {
       return;
     }
 
-    router.push('?checkEmail=true');
+    router.push('?checkEmail=magicLink');
   };
 
   return (

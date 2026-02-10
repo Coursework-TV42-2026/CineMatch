@@ -14,15 +14,15 @@ const CheckEmailBoundary = ({ children }: TCheckEmailBoundaryProps) => {
   const t = useTranslations('common.auth.checkEmail');
   const router = useRouter();
   const searchParams = useSearchParams();
-  const showCheckEmail = searchParams.get('checkEmail') === 'true';
+  const checkEmailType = searchParams.get('checkEmail');
 
-  if (showCheckEmail) {
+  if (checkEmailType === 'confirm' || checkEmailType === 'magicLink') {
     return (
       <AuthCard>
         <div className="space-y-6 text-center">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold text-foreground">{t('title')}</h2>
-            <p className="text-muted-foreground">{t('description')}</p>
+            <h2 className="text-2xl font-bold text-foreground">{t(`${checkEmailType}.title`)}</h2>
+            <p className="text-muted-foreground">{t(`${checkEmailType}.description`)}</p>
           </div>
 
           <div className="flex gap-3">
