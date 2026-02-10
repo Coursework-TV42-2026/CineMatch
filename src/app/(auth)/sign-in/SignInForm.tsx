@@ -98,7 +98,7 @@ const SignInForm = () => {
       </div>
 
       <div className="text-right">
-        <Link href="#" className="text-sm text-primary hover:underline">
+        <Link href="/reset-password" className="text-sm text-primary hover:underline">
           {t('actions.forgotPassword')}
         </Link>
       </div>

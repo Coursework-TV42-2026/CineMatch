@@ -13,3 +13,11 @@ export const strongPasswordSchema = basicPasswordSchema
   .regex(/\d/, tPath('common.errors.auth.password.number'));
 
 export const emailSchema = z.email(tPath('common.errors.auth.email.invalid'));
+
+export const passwordWithConfirmSchema = z.object({
+  password: strongPasswordSchema,
+  confirmPassword: basicPasswordSchema,
+});
+
+export const refinePasswords = (data: { password: string; confirmPassword: string }) =>
+  data.confirmPassword === data.password;

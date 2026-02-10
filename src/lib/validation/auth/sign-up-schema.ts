@@ -1,14 +1,12 @@
-import z from 'zod';
 import { tPath } from '@/lib/utils/i18n';
-import { basicPasswordSchema, emailSchema, strongPasswordSchema } from './utils';
+import { emailSchema, passwordWithConfirmSchema, refinePasswords } from './utils';
+import type z from 'zod';
 
-export const signUpSchema = z
-  .object({
+export const signUpSchema = passwordWithConfirmSchema
+  .extend({
     email: emailSchema,
-    password: strongPasswordSchema,
-    confirmPassword: basicPasswordSchema,
   })
-  .refine((data) => data.confirmPassword === data.password, {
+  .refine(refinePasswords, {
     message: tPath('common.errors.auth.password.match'),
     path: ['confirmPassword'],
   });
