@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import AppProviders from '@/components/providers/AppProviders';
+import GlobalErrorModal from '@/components/shared/GlobalErrorModal';
+import AppProviders from '@/context/AppProviders';
 import './globals.css';
 
 const inter = Inter({
@@ -9,9 +10,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Antipode',
+  title: 'CineMatch',
   description:
-    'Collaborate in real-time, discover hidden gems with AI insights, and preserve your journey with digital time capsules',
+    'Track what you watch, find your next favorite movie with AI, and share your passion for cinema with friends on CineMatch.',
 };
 
 export default async function RootLayout({
@@ -22,7 +23,10 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} antialiased`}>
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          {children}
+          <GlobalErrorModal />
+        </AppProviders>
       </body>
     </html>
   );

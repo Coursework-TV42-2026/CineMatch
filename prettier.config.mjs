@@ -8,6 +8,9 @@ const config = {
   endOfLine: 'lf',
   arrowParens: 'always',
   plugins: ['prettier-plugin-tailwindcss'],
+
+  tailwindStylesheet: './src/app/globals.css',
+  tailwindFunctions: ['cn', 'clsx', 'cva'],
 };
 
 export default config;
